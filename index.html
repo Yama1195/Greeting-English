@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title>国際的なあいさつプログラム</title>
+  <script>
+    function sayHelloWorld(){
+      var name = document.getElementById("name").value;
+      var message = document.getElementById("message");
+      if(name == alphabet(name)){
+        message.innerHTML = "Hello dear" + name;
+      }else{
+        message.innerHTML = "こんにちは" + name + "さん";
+      }
+    }
+    function alphabet(name){
+      var match = name.match(/[A-z ]/g);
+      if(match == null){
+        return null;
+      }
+      return match.join("");
+    }
+  </script>
+</head>
+<body>
+  <p>名前を入力してください/Enter your name</p>
+  <p><input type="text" id="name" size="20"/>
+  <input type="button" value="あいさつ/Greet" onclick="sayHelloWorld()" ></p>
+  <div id="message"></div>
+</body>
+</html>
